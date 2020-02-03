@@ -9,24 +9,37 @@ import AboutPage from "./Pages/About/AboutPage";
 
 export const Routes = [
   {
-    path: "/",
+    path: "/about",
     exact: true,
-    name: "Home",
-    page: HomePage,
-    icon: <HomeIcon />
+    page: AboutPage
   },
   {
-    path: "/about",
-    name: "About",
+    path: "/",
     exact: true,
-    page: AboutPage,
-    icon: <InfoIcon />
+    page: HomePage
   }
 ];
 
 Routes.propTypes = {
   path: PropTypes.string.isRequired,
+  page: PropTypes.element.isRequired
+};
+
+export const Links = [
+  {
+    to: "/",
+    name: "Home",
+    icon: <HomeIcon />
+  },
+  {
+    to: "/about",
+    name: "About",
+    icon: <InfoIcon />
+  }
+];
+
+Links.propTypes = {
+  to: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  page: PropTypes.element.isRequired,
-  icon: PropTypes.element.isRequired
+  icon: PropTypes.element
 };

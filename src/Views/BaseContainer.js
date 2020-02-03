@@ -13,11 +13,10 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
-
 import ListItemLink from "../Helpers/ListItemLink";
 
 import { useStyles } from "./styles";
-import { Routes } from "../Routes";
+import { Links } from "../Routes";
 import PageContainer from "./PageContainer";
 
 function BaseContainer() {
@@ -83,12 +82,13 @@ function BaseContainer() {
         </div>
         <Divider />
         <List>
-          {Routes.map((route, index) => (
+          {Links.map((link, index) => (
             <ListItemLink
-            to={route.path}
-            primary={route.name}
-            icon={route.icon}
-            key={index} />
+              to={link.to}
+              primary={link.name}
+              icon={link.icon ? link.icon : null}
+              key={index}
+            />
           ))}
         </List>
         <Divider />
