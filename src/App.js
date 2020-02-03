@@ -3,7 +3,7 @@ import "./styles.css";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import PageContainer from "./Views/PageContainer";
+import BaseContainer from "./Views/BaseContainer";
 import Login from "./Login/Login";
 
 export default function App() {
@@ -26,7 +26,7 @@ export default function App() {
             <Login />
           </Route>
           <Route path="/">
-            <PageContainer />
+            <BaseContainer />
           </Route>
         </Switch>
       </Router>
