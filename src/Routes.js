@@ -60,22 +60,22 @@ export const Links = [
     icon: <DashboardIcon />
   },
   {
-    to: "/",
+    to: "/analytics",
     name: "Analytics",
     icon: <ShowChartIcon />
   },
   {
-    to: "/",
+    to: "/tasks",
     name: "Task List",
     icon: <AssignmentIcon />
   },
   {
-    to: "/",
+    to: "/history",
     name: "History",
     icon: <HistoryIcon />
   },
   {
-    to: "/",
+    to: "/settings",
     name: "Settings",
     icon: <SettingsIcon />
   },
