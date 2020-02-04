@@ -46,7 +46,7 @@ export const useStyles = makeStyles(theme => ({
       duration: theme.transitions.duration.leavingScreen
     }),
     overflowX: "hidden",
-    width: 0,
+    width: theme.spacing(7) + 1,
     [theme.breakpoints.up("sm")]: {
       width: theme.spacing(7) + 1
     }
@@ -64,5 +64,8 @@ export const useStyles = makeStyles(theme => ({
   },
   selected: {
     borderRight: "5px solid"
+  },
+  fillHeight: {
+    flexGrow: 1
   }
 }));

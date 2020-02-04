@@ -8,14 +8,17 @@ import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
+import { ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
 import ListItemLink from "../Helpers/ListItemLink";
 import { Links } from "../Routes";
 
 function SideNavBar(props) {
-  const { classes, open, closeDrawer } = props;
+  const { classes, open, closeDrawer, userName } = props;
   const theme = useTheme();
 
-  const [selectedIndex, setSelectedIndex] = React.useState("Home");
+  const [selectedIndex, setSelectedIndex] = React.useState(Links[0].name);
 
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
@@ -58,7 +61,16 @@ function SideNavBar(props) {
           />
         ))}
       </List>
+      <div className={clsx(classes.fillHeight)} />
       <Divider />
+      <List>
+        <ListItem>
+          <ListItemIcon>
+            <AccountCircleIcon />
+            </ListItemIcon>
+            <ListItemText primary={userName ? userName : "Anonymous"} />
+          </ListItem>
+      </List>
     </Drawer>
   );
 }
