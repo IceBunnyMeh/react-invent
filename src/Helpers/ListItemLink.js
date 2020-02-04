@@ -1,11 +1,12 @@
 import React, { useMemo, forwardRef } from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
 
 import { Link } from "react-router-dom";
 import { ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 
 function ListItemLink(props) {
-  const { icon, primary, to } = props;
+  const { icon, primary, to, selected, handleListItemClick, classes } = props;
 
   const renderLink = useMemo(
     () =>
@@ -15,7 +16,15 @@ function ListItemLink(props) {
 
   return (
     <li>
-      <ListItem button component={renderLink}>
+      <ListItem
+        button
+        component={renderLink}
+        selected={selected === primary}
+        onClick={event => handleListItemClick(event, primary)}
+        classes={{
+          selected: clsx(classes.selected)
+        }}
+      >
         <ListItemIcon>{icon}</ListItemIcon>
         <ListItemText primary={primary} />
       </ListItem>
@@ -28,6 +37,5 @@ ListItemLink.propTypes = {
   primary: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired
 };
-
 
 export default ListItemLink;
